@@ -12,6 +12,6 @@ If, like me, you manage to set a sensitive variable and forget to save it to you
 
 Run the runbook, connect to the machine it was run on and open password.txt. The password will be logged in clear text and you can save the password. 
 
-```txt
+```
 password: Pa$$w0rd
 ```
