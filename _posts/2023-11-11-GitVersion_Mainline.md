@@ -59,7 +59,7 @@ For more information, see the official Semantic Versioning website: https://semv
 ### Introducing GitVersion in Mainline Mode
 
 While the hybrid approach mentioned above is an improvement over manual versioning, and is the way I version most of my modules, it doesn't support semantic versioning, and it doesn't support pre-releases. 
-GitVersion is an open source tool that automates the versioning of your projects based on Git history. Out of the box, GitVersion uses a mode called "ContinuousDeployment". This mode does not suit the way I want to version my modules. Mainline mode is the mode that best suits the way I work. The main rule of mainline development is that **main is always in a state that could be deployed to production**. More information about mainline mode can be found [here] (https://GitVersion.net/docs/reference/modes/mainline).
+GitVersion is an open source tool that automates the versioning of your projects based on Git history. Out of the box, GitVersion uses a mode called "ContinuousDeployment". This mode does not suit the way I want to version my modules. Mainline mode is the mode that best suits the way I work. The main rule of mainline development is that **main is always in a state that could be deployed to production**. More information about mainline mode can be found [here](https://GitVersion.net/docs/reference/modes/mainline).
 When developing PowerShell modules, I create a new git branch for development, I never develop in main. Depending on the name of the branch, I want to increment the MINOR or PATCH number. I also want to build my module after each push as a pre-release.  
 
 Let's get started with GitVersion!
