@@ -119,11 +119,9 @@ function ConvertTo-SemVersion {
     }
 
     end {}
-}  }
-
-    end {}
-}
+}  
 ```
+
 #### Conclusion
 
 Adopting standard and comparable versions through Semantic Versioning has significantly helped me with my work, particularly with managing NuGet repositories. Being able to quickly compare versions with the versions in my repositories.
