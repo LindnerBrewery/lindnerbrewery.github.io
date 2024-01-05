@@ -80,7 +80,7 @@ function ConvertTo-SemVersion {
 
     process {
         $normVersion = $null
-        $regexPattern = '^(?<major>0|[0-9]\d*)?(?:\.(?<minor>[0-9]\d*))?(?:\.(?<patch>0|[0-9]\d*))?(?:\.(?<build>0|[0-9]\d*))?(?:-(?<prerelease>(?:0|[0-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$'
+        $regexPattern = '^(?<major>\d*)?(?:\.(?<minor>\d*))?(?:\.(?<patch>\d*))?(?:\.(?<build>\d*))?(?:-(?<prerelease>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?(?:\+(?<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$'
         $result = [Regex]::Match($Version, $regexPattern)
         
         # throw error if version not valid
