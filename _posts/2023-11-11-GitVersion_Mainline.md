@@ -3,9 +3,6 @@ layout: post
 title: Versioning PowerShell modules with GitVersion in Mainline Mode
 tags: powershell git gitversion
 ---
-
-# Versioning PowerShell modules with GitVersion in Mainline Mode
-
 In the world of software development, version management is a critical aspect of maintaining the integrity of a project and tracking its progress. For PowerShell module developers, the process of versioning can sometimes be a manual and error-prone task. In this blog post, we'll explore an alternative approach to versioning using GitVersion in mainline mode, which can help streamline the process and ensure consistent versioning across your projects.
 
 ### The Current Versioning Process

@@ -3,8 +3,6 @@ layout: post
 title: Restarting Octopus Deploy Tentacle during a deployment
 tags: powershell octopus
 ---
-# Restarting tentacle during a deployment
-
 When deploying an Octopus project, one of your steps may involve editing or creating an environment variable. One of the most common variables to be updated when installing an application is the PATH variable. An installation adds the folder where the application can be found to the PATH variable. 
 In other cases, an application will create a new environment variable. Java, for example, will create a new variable called JAVA_HOME, which points to the folder where the JDK files can be found. 
 Environment variables are loaded when the tentacle process is started, and the child processes (Calamari, PowerShell) inherit the environment variables from the parent process. This means that newly created or updated variables won't be found until the tentacle process is restarted or manually loaded into your current context.
