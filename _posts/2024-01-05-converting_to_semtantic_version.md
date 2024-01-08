@@ -90,27 +90,28 @@ function ConvertTo-SemVersion {
 
         # convert the major minor and patch
         Write-Verbose "Converting version"
-        $normVersion = [version]::new($result.groups[1].Value, $result.groups[2].Value, $result.groups[3].Value)
+        $normVersion = [version]::new($result.groups["major"].Value, $result.groups["minor"].Value, $result.groups["patch"].Value)
         $rev = $result.groups[4].Value
         if ($rev -gt 0) {
             Write-Verbose "Revision ($rev) is not 0 and will be preserved"
-            $normVersion = [System.Version]::Parse("$($normVersion).$($result.groups[4].Value)")
-        } elseif ($rev -eq 0) {
+            $normVersion = [System.Version]::Parse("$($normVersion).$($result.groups["build"].Value)")
+        }
+        elseif ($rev -eq 0) {
             Write-Verbose "Revision is 0 and will be removed from the converted version"
         }
         $versionString = $normVersion.ToString()
 
         # if version is a prerelease or has build metadata then return converted version with metadata
 
-        if ($result.Groups[5].Success -or $result.Groups[6].Success) {
+        if ($result.Groups["prerelease"].Success -or $result.Groups["buildmetadata"].Success) {
             Write-Verbose "Version has prerelease or buildmetadata and will be returned as is"
-            if ($result.groups[5].Value) {
+            if ($result.groups["prerelease"].Value) {
                 Write-Verbose "Version has prerelease tag"
-                $versionString += "-" + $result.groups[5].Value
+                $versionString += "-" + $result.groups["prerelease"].Value
             }
-            if ($result.groups[6].Value) {
+            if ($result.groups["buildmetadata"].Value) {
                 Write-Verbose "Version has buildmetadata tag"
-                $versionString += "+" + $result.groups[6].Value
+                $versionString += "+" + $result.groups["buildmetadata"].Value
             }
 
         }
@@ -119,7 +120,8 @@ function ConvertTo-SemVersion {
     }
 
     end {}
-}  
+}
+
 ```
 
 #### Conclusion
