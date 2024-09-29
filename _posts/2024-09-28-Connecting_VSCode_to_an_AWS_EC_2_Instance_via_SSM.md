@@ -79,7 +79,7 @@ Add your public key to the `authorized_keys` file and save it.
 Exit the current SSM session and start a new SSM session with an SSH session:
 
 ```console
-ssm start-session --target i-09cedbf6cie68c2b1 --profile default --region eu-central-1 --document-name AWSStartSSHSession --parameters portNumber=22
+ssm start-session --target i-09cedbf6cie68c2b1 --profile default --region eu-central-1 --document-name AWS-StartSSHSession --parameters portNumber=22
 ```
 
 Ensure you have the correct region specified. Once the instance is running, open a new terminal and connect to the SSH endpoint:
